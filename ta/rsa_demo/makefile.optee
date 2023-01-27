@@ -1,0 +1,2 @@
+BINARY =  f5cfe8c1-2023-65e0-1992-dc6bd42edcd2
+include ../ta_common.mk

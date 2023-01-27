@@ -1,0 +1,36 @@
+# Normally this makefile shouldn't be called directly and we expect the output
+# path to be on a certain location to fit together with the other OP-TEE
+# gits and helper scripts.
+ifeq ($O,)
+$(error output path should be specified when calling this makefile)
+endif
+
+# Prevent use of LDFLAGS from the environment. For example, yocto exports
+# LDFLAGS that are suitable for the client applications, not for TAs
+LDFLAGS=
+
+TA_DIRS := zhouhehe
+TA_DIRS += cata_stress
+TA_DIRS += pass_paramaters
+TA_DIRS += storage
+TA_DIRS += rsakey
+TA_DIRS += esdsa_demo
+TA_DIRS += aes_auth_demo
+TA_DIRS += hmac_demo
+TA_DIRS += rsa_demo
+TA_DIRS += hash_demo
+TA_DIRS += aes_demo
+TA_DIRS += persist_demo
+TA_DIRS += bst_faceid
+
+
+.PHONY: all
+all: ta
+
+.PHONY: ta
+ta:
+	$(q)$(foreach dir,$(TA_DIRS), $(MAKE) -C $(dir) -f makefile.optee O=$(O)/$(dir) &&) true
+
+.PHONY: clean
+clean:
+	$(q)$(foreach dir,$(TA_DIRS), $(MAKE) -C $(dir) -f makefile.optee O=$(O)/$(dir) $@ &&) true

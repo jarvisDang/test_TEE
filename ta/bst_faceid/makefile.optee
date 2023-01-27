@@ -1,0 +1,7 @@
+BINARY =  8b22aba8-1ef0-ccbf-d9f5-f4b634127e15
+
+libdirs += Locals/Code/libs/ARM_V8A_AARCH64/
+libnames += bstMatch
+libdeps += Locals/Code/libs/ARM_V8A_AARCH64/libbstMatch.a
+
+include ../ta_common.mk

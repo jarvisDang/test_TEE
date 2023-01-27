@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<properties>
+    <group name="gpd.ta">
+        <property name="description"        type="STRING"   value="An example of GP internal APIs"/>
+        <property name="singleInstance"     type="BOOLEAN"  value="false"/>
+        <property name="multiSession"       type="BOOLEAN"  value="false"/>
+        <property name="instanceKeepAlive"  type="BOOLEAN"  value="false"/>
+    </group>
+    <group name="com.trustonic.ta">
+        <property name="name"               type="STRING"   value="taSampleGP"/>
+        <property name="vendor"             type="STRING"   value="Trustonic"/>
+    </group>
+</properties>
